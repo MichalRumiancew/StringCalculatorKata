@@ -29,8 +29,22 @@ public class CalculatorTest {
 
     }
     @Test
-    void shouldAddTwoNumbersSeparatedWhithComma(){
+    void shouldAddTwoNumbersSeparatedWithComma(){
         int result = calculator.add("1,2");
         assertThat(result).isEqualTo(3);
     }
+    @Test
+    void shouldAddThreeNumbersSeparatedWithComma() {
+        int result = calculator.add("1,2,3");
+        assertThat(result).isEqualTo(6);
+    }
+    @Test
+    void shouldAddThreeNumbersSeparatedWithCommaAndNewLine () {
+        int result = calculator.add("1,2\n4");
+        assertThat(result).isEqualTo(7);
+
+    }
+
+
+
 }

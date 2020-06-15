@@ -4,7 +4,17 @@ public class Calculator {
         if(input.isEmpty()){
             return 0;
         }
-        String[] numbers = input.split("\\,");
-        return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+
+        String[] numbers = input.split(",|\n");
+        int result = 0;
+        for (String number:numbers) {
+            result +=Integer.parseInt(number);
+            
+        }
+        return result;
+    }
+
+    private boolean isSingleNumber(String input) {
+        return input.matches("[0-9]");
     }
 }
