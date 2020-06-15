@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.testng.asserts.Assertion;
 
 import java.util.Calendar;
 
@@ -28,23 +29,30 @@ public class CalculatorTest {
         assertThat(result).isEqualTo(1);
 
     }
+
     @Test
-    void shouldAddTwoNumbersSeparatedWithComma(){
+    void shouldAddTwoNumbersSeparatedWithComma() {
         int result = calculator.add("1,2");
         assertThat(result).isEqualTo(3);
     }
+
     @Test
     void shouldAddThreeNumbersSeparatedWithComma() {
         int result = calculator.add("1,2,3");
         assertThat(result).isEqualTo(6);
     }
+
     @Test
-    void shouldAddThreeNumbersSeparatedWithCommaAndNewLine () {
+    void shouldAddThreeNumbersSeparatedWithCommaAndNewLine() {
         int result = calculator.add("1,2\n4");
         assertThat(result).isEqualTo(7);
 
     }
 
+    @Test
+    void shouldThrowExceptionWhenNegativeNumberProvided() {
+        Assertion.assertThrows(NegativeNumber.Exception)
+    }
 
 
 }
