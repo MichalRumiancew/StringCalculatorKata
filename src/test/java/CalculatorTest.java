@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.testng.asserts.Assertion;
@@ -51,7 +52,9 @@ public class CalculatorTest {
 
     @Test
     void shouldThrowExceptionWhenNegativeNumberProvided() {
-        Assertion.assertThrows
+        Assertions.assertThrows(NegativeNumberException.class, ()->{
+            calculator.add("-1");
+        });
     }
 
 
