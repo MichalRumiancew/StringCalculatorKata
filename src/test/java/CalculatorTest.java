@@ -51,7 +51,7 @@ public class CalculatorTest {
 
     @Test
     void shouldThrowExceptionWhenNegativeNumberProvided() {
-        Assertion.assertThrows(NegativeNumber.Exception)
+        Assertion.assertThrows
     }
 
 
